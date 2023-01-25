@@ -85,3 +85,18 @@ TEST_CASE( "Test combined", "[bitset]" ) {
     }
 }
 
+TEST_CASE("Test of good, set, reset, and toggle", "[bitset]") {
+    Bitset b1;
+    b1.set(2);
+    b1.reset(0);
+    b1.toggle(5);
+    REQUIRE(b1.good() == true);
+    b1.set(10);
+    REQUIRE(b1.good() == false);
+}
+
+TEST_CASE("Test of string param constructor and asString()", "[bitset]") {
+    Bitset b1("0101010101010001111001000010111111100101010001010101010101");
+    REQUIRE(b1.good() == true);
+    REQUIRE(b1.asString() == "0101010101010001111001000010111111100101010001010101010101");
+}
