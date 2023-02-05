@@ -1,5 +1,6 @@
 #include <iostream>
 #include "bitset.hpp"
+#include <vector>
 #include "bitset.cpp"
 
 using namespace std;

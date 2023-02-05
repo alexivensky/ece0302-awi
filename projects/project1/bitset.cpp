@@ -41,7 +41,7 @@ intmax_t Bitset::size() const { return N; }
 bool Bitset::good() const { return valid; }
 
 void Bitset::set(intmax_t index) {
-    if (index > N-1) {
+    if (index > N-1 || index < 0) {
         valid = 0;
     } else {
         *(bitArray + index) = 1;
@@ -49,7 +49,7 @@ void Bitset::set(intmax_t index) {
 }
 
 void Bitset::reset(intmax_t index) {
-    if (index > N-1) {
+    if (index > N-1 || index < 0) {
         valid = 0;
     } else {
         *(bitArray + index) = 0;
@@ -57,7 +57,7 @@ void Bitset::reset(intmax_t index) {
 }
 
 void Bitset::toggle(intmax_t index) {
-    if (index > N-1) {
+    if (index > N-1 || index < 0) {
         valid = 0;
     } else {
         *(bitArray + index) = !(*(bitArray + index));
@@ -65,7 +65,7 @@ void Bitset::toggle(intmax_t index) {
 }
 
 bool Bitset::test(intmax_t index) {
-    if (index > N-1) {
+    if (index > N-1 || index < 0) {
         valid = 0;
         return 0;
     } else {

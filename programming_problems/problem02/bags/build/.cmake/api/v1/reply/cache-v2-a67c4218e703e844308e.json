@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/alexivensky/Documents/College/ECE 302/starter-code-ece0302/projects/project1/build"
+			"value" : "/Users/alexivensky/Documents/College/ECE 302/starter-code-ece0302/programming_problems/problem02/bags/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -407,7 +407,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/alexivensky/Documents/College/ECE 302/starter-code-ece0302/projects/project1/build/CMakeFiles/pkgRedirects"
+			"value" : "/Users/alexivensky/Documents/College/ECE 302/starter-code-ece0302/programming_problems/problem02/bags/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -467,7 +467,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/alexivensky/Documents/College/ECE 302/starter-code-ece0302/projects/project1"
+			"value" : "/Users/alexivensky/Documents/College/ECE 302/starter-code-ece0302/programming_problems/problem02/bags"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -691,7 +691,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "13.0"
 		},
 		{
 			"name" : "CMAKE_OSX_SYSROOT",
@@ -703,7 +703,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk"
+			"value" : "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -751,7 +751,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "P1"
+			"value" : "bags"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1034,7 +1034,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "P1_BINARY_DIR",
+			"name" : "bags_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1043,10 +1043,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/alexivensky/Documents/College/ECE 302/starter-code-ece0302/projects/project1/build"
+			"value" : "/Users/alexivensky/Documents/College/ECE 302/starter-code-ece0302/programming_problems/problem02/bags/build"
 		},
 		{
-			"name" : "P1_IS_TOP_LEVEL",
+			"name" : "bags_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1058,7 +1058,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "P1_SOURCE_DIR",
+			"name" : "bags_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1067,7 +1067,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/alexivensky/Documents/College/ECE 302/starter-code-ece0302/projects/project1"
+			"value" : "/Users/alexivensky/Documents/College/ECE 302/starter-code-ece0302/programming_problems/problem02/bags"
 		}
 	],
 	"kind" : "cache",
