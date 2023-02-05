@@ -3,6 +3,8 @@
 
 #include "abstract_bag.hpp"
 
+static const std::size_t maxsize = 100;
+
 template <typename T>
 class LimitedSizeBag: public AbstractBag<T>
 {
@@ -32,7 +34,8 @@ public:
   bool contains(const T& item) const;
 
 private:
-
+  T* bagArray;
+  int size;
   // TODO
 };
 
