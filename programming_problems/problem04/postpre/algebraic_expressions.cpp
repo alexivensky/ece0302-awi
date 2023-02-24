@@ -5,6 +5,9 @@ using std::string;
 
 #include <cctype> // for isalpha
 
+#include <stack> // for std::stack
+using std::stack;
+
 #include "algebraic_expressions.hpp"
 
 bool isoperator(char ch) {
@@ -42,7 +45,28 @@ bool isPost(string s) {
 }
 
 void convert(string &postfix, string &prefix) {
+  if (isPost(postfix)) {
+    stack<string> convStack;
 
-  // TODO
-  
+    int length = postfix.size();
+
+    for (int i = 0; i < length; i++) {
+      if (!isoperator(postfix[i])) {
+        convStack.push(string(1, postfix[i]));
+      } else {
+        string o1, o2, temp;
+        o1 = convStack.top();
+        convStack.pop();
+        o2 = convStack.top();
+        convStack.pop();
+        temp = postfix[i] + o2 + o1;
+        convStack.push(temp);
+      }
+    }
+    prefix = "";
+    while (!convStack.empty()) {
+      prefix += convStack.top();
+      convStack.pop();
+    }
+  }
 }

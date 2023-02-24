@@ -3,13 +3,18 @@
 
 #include <string>
 #include <vector>
+using std::vector;
+using std::string;
 
 class FindPalindrome{
 
 private:
 	// private stuff that you define and implement goes here...
 	
-	// ...
+	int numPalindromes;
+	vector<string> entries;
+	vector<vector<string>> sentences;
+	
 	
 	// private stuff that you are given or is specified in the project
 	// description...

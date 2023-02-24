@@ -24,7 +24,28 @@ static void convertToLowerCase(string & value)
 void FindPalindrome::recursiveFindPalindromes(vector<string>
         candidateStringVector, vector<string> currentStringVector)
 {
-	// TODO need to implement this recursive function!
+	int currSize = currentStringVector.size();  //called "S" in problem statement, used to keep track of number of recursive calls
+	int canSize = candidateStringVector.size(); //size of candidate string vector
+	//base case when currentStringVector is empty
+	if (currSize == 0) {
+		string temp = ""; //temp variable to hold potential sentence palindrome solution
+		for (int i = 0; i < canSize; i++) {
+			temp += candidateStringVector[i];
+		}
+		if (isPalindrome(temp)) {
+			numPalindromes++; //updating member variable
+			sentences.push_back(candidateStringVector); //adding solution to solution vector
+		}
+	} else {
+		for (int i = 0; i < currSize; i++) { //S layers of recursion
+			vector<string> recurCandidate = candidateStringVector; //recursive iteration of candidate
+			vector<string> recurCurrent = currentStringVector; //recursive iteration of current
+			recurCandidate.push_back(recurCurrent[i]); //places one element from current into candidate with each layer of recursion
+			recurCurrent.erase(recurCurrent.begin() + i); //removes element just placed into candidate from current
+			recursiveFindPalindromes(recurCandidate, recurCurrent); //next layer of recursion
+		}
+	}
+	
 	return;
 }
 
@@ -49,13 +70,10 @@ bool FindPalindrome::isPalindrome(string currentString) const
 
 FindPalindrome::FindPalindrome()
 {
-	// TODO need to implement this...
+	numPalindromes = 0;
 }
 
-FindPalindrome::~FindPalindrome()
-{
-	// TODO need to implement this...
-}
+FindPalindrome::~FindPalindrome() {}
 
 int FindPalindrome::number() const
 {
