@@ -20,3 +20,9 @@ TEST_CASE("test recursion", "[FindPalindrome]"){
 	REQUIRE(b.number() == 6);
 }
 
+TEST_CASE("adding a vector", "[FindPalindrome]") {
+	FindPalindrome b;
+	vector<string> addVec = {"a", "AA", "AaA"};
+	REQUIRE(b.add(addVec));
+}
+

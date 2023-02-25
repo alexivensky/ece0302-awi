@@ -13,7 +13,7 @@ private:
 	
 	int numPalindromes;
 	vector<string> entries;
-	vector<vector<string>> sentences;
+	vector<vector<string> > sentences;
 	
 	
 	// private stuff that you are given or is specified in the project
