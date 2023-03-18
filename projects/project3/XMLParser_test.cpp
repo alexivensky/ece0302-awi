@@ -47,10 +47,13 @@ TEST_CASE( "Test XMLParser tokenizeInputString", "[XMLParser]" )
 	   INFO("Hint: tokenize single element test of XMLParse");
 		// Create an instance of XMLParse
 		XMLParser myXMLParser;
-		string testString = "<test>stuff</test>";
+		string testString = "<test my_attr=\"32323\">stuff</test>";
 		bool success;
 		success = myXMLParser.tokenizeInputString(testString);
 		REQUIRE(success);
+		success = myXMLParser.parseTokenizedInput();
+		REQUIRE(success);
+
 }
 
 
@@ -173,12 +176,13 @@ TEST_CASE( "Test XMLParser parseTokenizedInput Handout-0", "[XMLParser]" )
 		}
 }
 
+
 TEST_CASE( "Test XMLParser Final Handout-0", "[XMLParser]" )
 {
 	   INFO("Hint: TestFile");
 		// Create an instance of XMLParse
 		XMLParser myXMLParser;
-		ifstream myfile ("./TestFile.txt");
+		ifstream myfile("./TestFile.txt");
 		std::string inputString((std::istreambuf_iterator<char>(myfile) ), (std::istreambuf_iterator<char>()) );
 
 		bool success;

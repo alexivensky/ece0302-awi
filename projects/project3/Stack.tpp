@@ -12,6 +12,8 @@
 template<class ItemType>
 Stack<ItemType>::Stack() 
 {
+	headPtr = nullptr;
+	currentSize = 0;
 }  // end default constructor
 
 // TODO: Implement the destructor here
@@ -24,20 +26,25 @@ Stack<ItemType>::~Stack()
 template<class ItemType>
 bool Stack<ItemType>::isEmpty() const
 {
-	return true;
+	return currentSize == 0;
 }  // end isEmpty
 
 // TODO: Implement the size method here
 template<class ItemType>
 int Stack<ItemType>::size() const
 {
-	return 0;
+	return currentSize;
 }  // end size
 
 // TODO: Implement the push method here
 template<class ItemType>
 bool Stack<ItemType>::push(const ItemType& newItem)
 {
+	Node<ItemType>* newNodePtr = new Node<ItemType>();
+	newNodePtr->setItem(newItem);
+	newNodePtr->setNext(headPtr);
+	headPtr = newNodePtr;
+	currentSize++;
 	return true;
 }  // end push
 
@@ -45,14 +52,22 @@ bool Stack<ItemType>::push(const ItemType& newItem)
 template<class ItemType>
 ItemType Stack<ItemType>::peek() const
 {
-	ItemType returnItem;
-	return returnItem;
+	if (!isEmpty()) { return headPtr->getItem(); }
+	else { throw logic_error("peek empty stack"); }
 }  // end peek
 
 // TODO: Implement the pop method here
 template<class ItemType>
 bool Stack<ItemType>::pop() 
 {
+	if (currentSize != 0) {
+		Node<ItemType>* nodeToDelete = new Node<ItemType>();
+		nodeToDelete = headPtr;
+		headPtr = headPtr->getNext();
+		delete nodeToDelete;
+		currentSize--;
+		return true;
+	}
 	return false;
 }  // end pop
 
@@ -60,5 +75,8 @@ bool Stack<ItemType>::pop()
 template<class ItemType>
 void Stack<ItemType>::clear()
 {
+	while (!isEmpty()) {
+		pop();
+	}
 }  // end clear
 
