@@ -29,14 +29,23 @@ private:
 	/** Vector to store the tokenized input string and the token types */
 	std::vector<TokenStruct> tokenizedInputVector;
 
+	//bools to keep track of whether object has completed tokenizing and parsing
 	bool tokenized = 0;
 	bool parsed = 0;
 
+	//helper functions
+
+	//returns true if label follows given rules
 	bool isValidString(std::string);
+	//returns true if tag is a start tag
 	bool isStartTag(std::string);
+	//returns true if tag is an end tag
 	bool isEndTag(std::string);
+	//returns true if tag is an empty tag
 	bool isEmptyTag(std::string);
+	//returns true if tag is a declaration
 	bool isDecTag(std::string);
+	//removes attributes from tags
 	std::string removeAttributes(std::string);
   // You can add or change the private fields.
 

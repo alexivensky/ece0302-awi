@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include "XMLParser.hpp"
+#include "XMLParser.cpp"
 
 using namespace std;
 

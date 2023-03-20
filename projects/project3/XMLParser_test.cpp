@@ -47,12 +47,12 @@ TEST_CASE( "Test XMLParser tokenizeInputString", "[XMLParser]" )
 	   INFO("Hint: tokenize single element test of XMLParse");
 		// Create an instance of XMLParse
 		XMLParser myXMLParser;
-		string testString = "<test my_attr=\"32323\">stuff</test>";
+		string testString = "<?dec1?><?dec2?><test>stuff</test><?dec3?>";
 		bool success;
 		success = myXMLParser.tokenizeInputString(testString);
 		REQUIRE(success);
 		success = myXMLParser.parseTokenizedInput();
-		REQUIRE(success);
+		REQUIRE(!success);
 
 }
 
