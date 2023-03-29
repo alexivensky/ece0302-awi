@@ -3,75 +3,133 @@
 template <typename T>
 LinkedList<T>::LinkedList()
 {
-  //TODO
+  head = nullptr;
+  size = 0;
 }
 
 template <typename T>
 LinkedList<T>::~LinkedList()
 {
-  //TODO
+ 
 }
 
 template <typename T>
 LinkedList<T>::LinkedList(const LinkedList<T>& x)
 {
-  //TODO
+  head = x.head;
+  size = x.size;
 }
 
 template <typename T>
 LinkedList<T>& LinkedList<T>::operator=(LinkedList<T> x)
 {
-  //TODO
+  swap(x);
   return *this;
 }
 
 template <typename T>
 void LinkedList<T>::swap(LinkedList& x) 
 {
-  //TODO
+  std::swap(head, x.head);
+  std::swap(size, x.size);
 }
 
 template <typename T>
 bool LinkedList<T>::isEmpty() const noexcept
 {
-  //TODO
-  return true;
+  return (size == 0);
 }
 
 template <typename T>
 std::size_t LinkedList<T>::getLength() const noexcept
 {
-  //TODO
-  return 0;
+  return size;
 }
 
 template <typename T>
 void LinkedList<T>::insert(std::size_t position, const T& item)
 {
-  //TODO
+  if (position > size || position < 0) {
+    throw std::range_error("bad!");
+  }
+  
+  if (position >= 0 && position <= size) {
+	Node<T>* newNode = new Node<T>(item);
+	size++;
+	if (position == 0) {
+		newNode->setNext(head);
+		head = newNode;
+	} else {
+		Node<T>* prev = new Node<T>();
+		prev = head;
+		for (int i = 0; i < position - 1; i++) {
+			prev = prev->getNext();
+		}
+		newNode->setNext(prev->getNext());
+		prev->setNext(newNode);
+	}
+	
+  }
+  return;
 }
 
 template <typename T>
 void LinkedList<T>::remove(std::size_t position)
 {
-  //TODO
+  if (position > size || position < 0 || head == nullptr) {
+    throw std::range_error("bad!");
+  }
+  if (position >= 0 && position < size) {
+	Node<T>* cur = nullptr;
+	if (position == 0) {
+		cur = head;
+		head = head->getNext();
+	} else {
+		Node<T>* prev = head;
+		for (int i = 0; i < position -1; i++) {
+			prev=prev->getNext();
+		}
+		cur = prev->getNext();
+		prev->setNext(cur->getNext());
+	}
+	delete cur;
+	size--;
+  }
+ 
 }
 
 template <typename T>
 void LinkedList<T>::clear()
 {
-  //TODO
+  while (!isEmpty()) {
+	remove(0);
+  }
 }
 
 template <typename T>
 T LinkedList<T>::getEntry(std::size_t position) const
 {
-  //TODO
-  return T();
+  if (position >= 0 && position < size) {
+	Node<T>* temp = head;
+	for (int i = 0; i < position; i++) {
+		temp=temp->getNext();
+	}
+	return temp->getItem();
+  } else {
+	throw std::range_error("bad!");
+  }
 }
 
 template <typename T>
 void LinkedList<T>::setEntry(std::size_t position, const T& newValue)
 {
-  //TODO
+  if (position < 0 || position > size || size == 0) {
+    throw std::range_error("bad!");
+  }
+  Node<T>* temp = new Node<T>();
+  temp = head;
+  for (int i = 0; i < position; i++) {
+    temp = temp->getNext();
+  }
+  temp->setItem(newValue);
 }

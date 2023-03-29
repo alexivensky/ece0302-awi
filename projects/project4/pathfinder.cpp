@@ -4,6 +4,8 @@
 #include "list.hpp"
 #include "queue.hpp"
 
+//\,,/(^_^)\,,/
+
 int main(int argc, char *argv[])
 {
   // get input/output file names from command line arguments
@@ -26,3 +28,4 @@ int main(int argc, char *argv[])
   writeToFile(image, output_file);
   
 }
+
