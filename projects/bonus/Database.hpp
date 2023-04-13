@@ -2,6 +2,10 @@
 #ifndef _DATABASE_H_
 #define _DATABASE_H_
 
+#include "binary_search_tree.hpp"
+#include "list.hpp"
+#include <vector>
+
 template <typename T>
 class Database
 {
@@ -30,8 +34,15 @@ public:
   bool contains(std::string key);
 
 private:
+  struct data_entry {
+    std::string key1, key2;
+    T item;
+  };
+  BinarySearchTree<std::string, int> b1, b2;
+  List<data_entry> data;
+  int size;
 
-  // TODO:
+  
 
 };
 

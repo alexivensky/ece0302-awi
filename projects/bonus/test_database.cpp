@@ -27,6 +27,8 @@ TEST_CASE("Test Add", "[add]") {
     REQUIRE(!testdb.isEmpty());
     REQUIRE(testdb.contains("key1"));
     REQUIRE(testdb.contains("key2"));
+    testdb.clear();
+    REQUIRE(testdb.isEmpty());
 }
 
 
