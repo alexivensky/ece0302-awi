@@ -40,16 +40,6 @@ bool Database<T>::remove(std::string key) {
     bool exists_b1 = b1.retrieve(key, idx1);
     bool exists_b2 = b2.retrieve(key, idx2);
     bool success = 0;
-    if (idx1 == idx2) {
-        data_entry d1 = data.getEntry(idx1);
-        std::string key1 = d1.key1;
-        std::string key2 = d1.key2;
-        b1.remove(key1);
-        b2.remove(key2);
-        data.remove(idx1);
-        size--;
-        return true;
-    }
     if (exists_b1) {
         data_entry d1 = data.getEntry(idx1);
         std::string key1 = d1.key1;

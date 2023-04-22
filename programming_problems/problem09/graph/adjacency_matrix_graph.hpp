@@ -2,6 +2,9 @@
 #define _ADJACENCY_MATRIX_GRAPH_H_
 
 #include "abstract_graph.hpp"
+#include <set>
+#include <map>
+#include <algorithm>
 
 template <typename LabelType>
 class AdjacencyMatrixGraph: public AbstractGraph<LabelType>
@@ -21,6 +24,12 @@ class AdjacencyMatrixGraph: public AbstractGraph<LabelType>
         void depthFirstTraversal(LabelType start, void visit(LabelType&));
 
         void breadthFirstTraversal(LabelType start, void visit(LabelType&));
+
+    private:
+
+        std::vector<std::vector<bool> > adjMatrix;
+        std::vector<LabelType> vertices;
+        int numEdges;        
   
 };
 

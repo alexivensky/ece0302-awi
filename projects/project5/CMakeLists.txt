@@ -5,7 +5,7 @@ project(P5 CXX)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(SOURCE test_frontier_queue.cpp test_solver.cpp frontier_queue.hpp frontier_queue.tpp)
+set(SOURCE test_frontier_queue.cpp test_solver.cpp frontier_queue.hpp frontier_queue.tpp puzzle_solver.hpp puzzle_solver.cpp)
   
 add_executable(test-frontier-queue test_frontier_queue.cpp catch.hpp
   state.hpp state.tpp
